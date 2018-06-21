@@ -1,12 +1,15 @@
 package com.mzkii.dev.qiitamvp
 
-data class Item(var createdAt: String,
-                var updatedAt: String,
-                var likesCount: Int,
-                var reactionsCount: Int,
-                var comments_count: Int,
-                var id: String,
-                var private: Boolean,
-                var title: String,
-                var url: String,
-                var user: User)
+import java.io.Serializable
+
+data class Item(val body: String,
+                val createdAt: String,
+                val updatedAt: String,
+                val likesCount: Int,
+                val reactionsCount: Int,
+                val commentsCount: Int,
+                val id: String,
+                val private: Boolean,
+                val title: String,
+                val url: String,
+                val user: User) : Serializable

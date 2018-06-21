@@ -34,7 +34,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleResponse(items: List<Item>) {
-        binding.listView.adapter = ItemListAdapter(items)
+        val onItemClickListener = {
+            item: Item -> startActivity(DetailActivity.createIntent(this, item))
+        }
+        binding.listView.adapter = ItemListAdapter(items, onItemClickListener)
     }
 
     private fun handleError(error: Throwable) {

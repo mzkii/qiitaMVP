@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.mzkii.dev.qiitamvp.databinding.ListRowBinding
 
-class ItemListAdapter constructor(private val itemList: List<Item>) : BaseAdapter() {
+class ItemListAdapter constructor(
+        private val itemList: List<Item>,
+        private val onClickListener: (Item) -> Unit) : BaseAdapter() {
 
     override fun getItem(position: Int): Item = itemList[position]
 
@@ -26,6 +28,7 @@ class ItemListAdapter constructor(private val itemList: List<Item>) : BaseAdapte
             binding.title.text = title
             binding.createAt.text = createdAt
         }
+        binding.item.setOnClickListener { onClickListener(getItem(position)) }
         return binding.root
     }
 }
