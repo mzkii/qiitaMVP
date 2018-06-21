@@ -27,17 +27,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         component.inject(this)
 
-        service.fetchQiitaItems(1, 20, "Python")
+        service.fetchQiitaItems(1, 40, "Kotlin")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse, this::handleError)
     }
 
     private fun handleResponse(items: List<Item>) {
-        for (item in items) {
-            Timber.tag("handleResponse").d(item.title)
-            binding.textView.text = item.title
-        }
+        binding.listView.adapter = ItemListAdapter(items)
     }
 
     private fun handleError(error: Throwable) {
