@@ -32,6 +32,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -59,4 +60,10 @@ dependencies {
     // Tools
     implementation 'com.jakewharton.timber:timber:4.7.0'
     implementation 'com.github.tiagohm.MarkdownView:library:0.19.0'
+
+    // AAC
+    def paging_version = "1.0.0"
+    def lifecycle_version = "1.1.1"
+    implementation "android.arch.paging:runtime:$paging_version"
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
 }

@@ -1,23 +1,18 @@
 package com.mzkii.dev.qiitamvp
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.LinearLayoutManager
 import com.mzkii.dev.qiitamvp.databinding.ActivityMainBinding
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
-import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var service: QiitaService
-
-    private val component: AppComponent by lazy {
-        DaggerAppComponent.builder().appModule(AppModule()).build()
-    }
-
+    private val adapter = ItemAdapter()
     private val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     }
@@ -25,22 +20,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        component.inject(this)
 
-        service.fetchQiitaItems(1, 40, "Kotlin")
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(this::handleResponse, this::handleError)
-    }
+        binding.recycler.layoutManager = LinearLayoutManager(this)
+        binding.recycler.addItemDecoration(
+                DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        binding.recycler.adapter = adapter
 
-    private fun handleResponse(items: List<Item>) {
-        val onItemClickListener = {
-            item: Item -> startActivity(DetailActivity.createIntent(this, item))
-        }
-        binding.listView.adapter = ItemListAdapter(items, onItemClickListener)
-    }
+        val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel.items.observe(this, Observer { pagedList ->
+            Timber.d("Receive Result")
+            adapter.submitList(pagedList)
+        })
 
-    private fun handleError(error: Throwable) {
-        Timber.tag("handleError").d(error)
+        viewModel.networkState.observe(this, Observer { networkState ->
+            Timber.d("NetworkState: $networkState")
+        })
     }
 }
