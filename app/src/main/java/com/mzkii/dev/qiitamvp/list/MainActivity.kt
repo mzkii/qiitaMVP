@@ -1,4 +1,4 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.list
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import com.mzkii.dev.qiitamvp.R
 import com.mzkii.dev.qiitamvp.databinding.ActivityMainBinding
 import timber.log.Timber
 

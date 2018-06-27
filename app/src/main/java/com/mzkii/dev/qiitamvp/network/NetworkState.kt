@@ -1,4 +1,4 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.network
 
 enum class NetworkState {
     RUNNING,

@@ -1,11 +1,13 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.detail
 
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.mzkii.dev.qiitamvp.R
 import com.mzkii.dev.qiitamvp.databinding.ActivityDetailBinding
+import com.mzkii.dev.qiitamvp.model.Item
 
 class DetailActivity : AppCompatActivity() {
 

@@ -1,7 +1,8 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.di
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
+import com.mzkii.dev.qiitamvp.network.QiitaService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

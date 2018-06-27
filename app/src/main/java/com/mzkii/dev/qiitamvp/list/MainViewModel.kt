@@ -1,4 +1,4 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.list
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
@@ -6,6 +6,9 @@ import android.arch.paging.LivePagedListBuilder
 import android.arch.paging.PagedList
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
+import com.mzkii.dev.qiitamvp.model.Item
+import com.mzkii.dev.qiitamvp.network.NetworkState
+import com.mzkii.dev.qiitamvp.network.QiitaService
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory

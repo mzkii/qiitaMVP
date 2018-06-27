@@ -1,5 +1,6 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.network
 
+import com.mzkii.dev.qiitamvp.model.Item
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

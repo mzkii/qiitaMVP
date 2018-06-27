@@ -1,4 +1,4 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.util
 
 import timber.log.Timber
 

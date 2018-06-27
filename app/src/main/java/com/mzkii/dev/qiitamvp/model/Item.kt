@@ -1,4 +1,4 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.model
 
 import java.io.Serializable
 

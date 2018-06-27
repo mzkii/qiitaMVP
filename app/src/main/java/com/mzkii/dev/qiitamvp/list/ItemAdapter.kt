@@ -1,15 +1,14 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.list
 
 import android.arch.paging.PagedListAdapter
 import android.databinding.DataBindingUtil
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
-import android.text.Layout
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
+import com.mzkii.dev.qiitamvp.R
 import com.mzkii.dev.qiitamvp.databinding.ListRowBinding
+import com.mzkii.dev.qiitamvp.model.Item
 
 class ItemAdapter : PagedListAdapter<Item, ItemAdapter.ViewHolder>(DIFF_CALLBACK) {
 

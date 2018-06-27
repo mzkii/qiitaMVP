@@ -4,7 +4,7 @@
     <data>
         <variable
             name="item"
-            type="com.mzkii.dev.qiitamvp.Item"/>
+            type="com.mzkii.dev.qiitamvp.model.Item"/>
     </data>
 
     <RelativeLayout

@@ -1,5 +1,6 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.di
 
+import com.mzkii.dev.qiitamvp.list.MainViewModel
 import dagger.Component
 import javax.inject.Singleton
 

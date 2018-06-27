@@ -1,6 +1,7 @@
 package com.mzkii.dev.qiitamvp
 
 import android.app.Application
+import com.mzkii.dev.qiitamvp.util.CrashlyticsTree
 import timber.log.Timber
 
 class MainApplication: Application() {

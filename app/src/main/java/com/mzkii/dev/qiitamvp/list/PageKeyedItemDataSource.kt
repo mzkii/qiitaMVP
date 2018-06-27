@@ -1,7 +1,10 @@
-package com.mzkii.dev.qiitamvp
+package com.mzkii.dev.qiitamvp.list
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.paging.PageKeyedDataSource
+import com.mzkii.dev.qiitamvp.model.Item
+import com.mzkii.dev.qiitamvp.network.NetworkState
+import com.mzkii.dev.qiitamvp.network.QiitaService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
